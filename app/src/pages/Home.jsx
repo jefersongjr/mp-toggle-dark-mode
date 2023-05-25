@@ -1,6 +1,18 @@
+import { useState, useRef } from 'react';
+
 function Home() {
-  const handleClick = (clickTarget) => {
-    console.log(clickTarget);
+  const [isActive, setIsActive] = useState(false);
+  const toogle = useRef(null);
+
+  const handleClick = () => {
+    const clickTarget = toogle.current;
+    if (isActive === false) {
+      clickTarget.firstChild.className = 'duration-700 translate-x-full w-1/2';
+      setIsActive(true);
+    } if (isActive === true) {
+      clickTarget.firstChild.className = 'duration-700 translate-x-0 w-1/2';
+      setIsActive(false);
+    }
   };
 
   return (
@@ -11,16 +23,20 @@ function Home() {
         </p>
       </header>
       <main className="w-full">
-        <div className="bg-emerald-400 w-32">
-          <button
-            id="toogle"
-            type="button"
-            className="slider"
-            onClick={ (e) => handleClick(e.target) }
-          >
-            Olá
-          </button>
-        </div>
+        <button
+          id="toogle"
+          ref={ toogle }
+          type="button"
+          className="bg-emerald-400 w-32 border-4"
+          onClick={ handleClick }
+        >
+          <img
+            src="https://i.pinimg.com/originals/27/f1/58/27f158bddbafc4aeaad4c381a79d1b6f.png"
+            alt=""
+            className="w-1/2"
+          />
+        </button>
+
       </main>
 
     </div>
