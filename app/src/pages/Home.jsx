@@ -22,7 +22,9 @@ function Home() {
           Olá Toogle. tudo bem com vcs
         </p>
       </header>
-      <main className="w-full">
+      <main
+        className="min-h-screen"
+      >
         <button
           id="toogle"
           ref={ toogle }
@@ -36,6 +38,16 @@ function Home() {
             className="w-1/2"
           />
         </button>
+        <div className="w-full h-2/5 bg-cyan-600">
+          <img
+            src="https://thumbs.gfycat.com/LikelyReadyDinosaur-max-1mb.gif"
+            className="paused"
+            alt="dsds"
+          />
+        </div>
+        <div className="w-full h-2/5 ">
+          { }
+        </div>
 
       </main>
 
