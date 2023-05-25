@@ -1,4 +1,8 @@
 function Home() {
+  const handleClick = (clickTarget) => {
+    console.log(clickTarget);
+  };
+
   return (
     <div>
       <header className="w-full h-16 bg-emerald-400">
@@ -12,6 +16,7 @@ function Home() {
             id="toogle"
             type="button"
             className="slider"
+            onClick={ (e) => handleClick(e.target) }
           >
             Olá
           </button>
