@@ -1,4 +1,8 @@
 import { useState, useRef } from 'react';
+import ghost from '../assets/ghost.png';
+import boo from '../assets/openEyesBoo.png';
+import backMario from '../assets/backMario.png';
+import frontMario from '../assets/fM.png';
 
 function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -38,15 +42,17 @@ function Home() {
             className="w-1/2"
           />
         </button>
-        <div className="w-full h-2/5 bg-cyan-600">
-          <img
-            src="https://thumbs.gfycat.com/LikelyReadyDinosaur-max-1mb.gif"
-            className="paused"
-            alt="dsds"
-          />
-        </div>
-        <div className="w-full h-2/5 ">
-          { }
+        <div className="flex w-full h-2/5 bg-cyan-600 justify-center">
+          {
+            (!isActive
+              ? <img src={ ghost } alt="fantas" />
+              : <img src={ boo } alt="fantas" className="animate-bounce" />)
+          }
+          {
+            (!isActive
+              ? <img src={ backMario } className="w-28 h-28" alt="mario" />
+              : <img src={ frontMario } alt="fantas" className="w-28 h-28" />)
+          }
         </div>
 
       </main>
