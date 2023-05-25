@@ -1,8 +1,15 @@
+import { useContext } from 'react';
 import Toggle from './Toggle';
+import ThemeContext from '../context/ThemeContext';
 
 function Header() {
+  const { isActive } = useContext(ThemeContext);
+
   return (
-    <header className="flex items-center w-full h-24 bg-red-500 justify-center">
+    <header
+      className={ `flex items-center w-full h-24 
+      ${isActive ? 'bg-blue-950' : 'bg-red-500'} justify-center` }
+    >
       <Toggle />
     </header>
   );
