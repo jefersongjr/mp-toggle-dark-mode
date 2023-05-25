@@ -6,6 +6,17 @@ function Home() {
           Olá Toogle. tudo bem com vcs
         </p>
       </header>
+      <main className="w-full">
+        <div className="bg-emerald-400 w-32">
+          <button
+            id="toogle"
+            type="button"
+            className="slider"
+          >
+            Olá
+          </button>
+        </div>
+      </main>
 
     </div>
   );
