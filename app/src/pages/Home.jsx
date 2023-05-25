@@ -3,6 +3,8 @@ import ghost from '../assets/ghost.png';
 import boo from '../assets/openEyesBoo.png';
 import backMario from '../assets/backMario.png';
 import frontMario from '../assets/fM.png';
+import blinkBlock from '../assets/blinkBlock.png';
+import block from '../assets/block.png';
 
 function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -11,6 +13,7 @@ function Home() {
   const handleClick = () => {
     const clickTarget = toogle.current;
     if (isActive === false) {
+      clickTarget.firstChild.className = 'animate-bounce';
       clickTarget.firstChild.className = 'duration-700 translate-x-full w-1/2';
       setIsActive(true);
     } if (isActive === true) {
@@ -37,9 +40,9 @@ function Home() {
           onClick={ handleClick }
         >
           <img
-            src="https://i.pinimg.com/originals/27/f1/58/27f158bddbafc4aeaad4c381a79d1b6f.png"
+            src={ !isActive ? block : blinkBlock }
             alt=""
-            className="w-1/2"
+            className="w-3/2"
           />
         </button>
         <div className="flex w-full h-2/5 bg-cyan-600 justify-center">
