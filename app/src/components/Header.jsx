@@ -8,7 +8,7 @@ function Header() {
   return (
     <header
       className={ `flex items-center w-full h-24 
-      ${isActive ? 'bg-blue-950' : 'bg-red-500'} justify-center` }
+      ${isActive ? 'bg-blue-950' : 'bg-amber-200'} justify-center` }
     >
       <Toggle />
     </header>

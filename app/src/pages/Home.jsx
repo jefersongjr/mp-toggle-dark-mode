@@ -14,6 +14,7 @@ function Home() {
     if (savedData) {
       const parsedActive = JSON.parse(savedData);
       setIsActive(parsedActive);
+      console.log(savedData);
     }
   }, []);
 
@@ -21,18 +22,24 @@ function Home() {
     <div>
       <Header />
       <main
-        className="flex min-h-screen"
+        className={ `flex h-screen 
+            ${isActive ? 'bg-red-900' : 'bg-red-500'} justify-center items-center` }
       >
-        <div className="flex w-full h-2/5 bg-blue-900 justify-center">
+        <div
+          className={ `flex w-full h-80 
+                ${isActive ? 'bg-blue-950' : 'bg-amber-200'} justify-evenly items-center
+                rounded-lg md:justify-center w-3/5 h-3/5 
+                ` }
+        >
           {
             (!isActive
-              ? <img src={ ghost } alt="fantas" />
-              : <img src={ boo } alt="fantas" className="animate-bounce" />)
+              ? <img src={ ghost } alt="fantasma escondido" className="w-1/2" />
+              : <img src={ boo } alt="fantasma" className="w-1/2 md:justify-self-end" />)
           }
           {
             (!isActive
-              ? <img src={ backMario } className="w-28 h-28" alt="Mario" />
-              : <img src={ frontMario } alt="Mario" className="w-28 h-28" />)
+              ? <img src={ backMario } className="w-32 h-32" alt="Mario" />
+              : <img src={ frontMario } alt="Mario" className="w-32 h-32" />)
           }
         </div>
 
