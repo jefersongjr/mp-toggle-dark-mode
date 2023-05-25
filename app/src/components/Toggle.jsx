@@ -12,11 +12,11 @@ function Toggle() {
     if (isActive === false) {
       clickTarget.firstChild.className = 'duration-700 translate-x-full w-1/2';
       setIsActive(true);
-      localStorage.setItem('data', JSON.stringify(true));
+      localStorage.setItem('darkMode', JSON.stringify(true));
     } if (isActive === true) {
       clickTarget.firstChild.className = 'duration-700 translate-x-0 w-1/2';
       setIsActive(false);
-      localStorage.setItem('data', JSON.stringify(false));
+      localStorage.setItem('darkMode', JSON.stringify(false));
     }
   };
 
@@ -25,13 +25,13 @@ function Toggle() {
       id="toogle"
       ref={ toogle }
       type="button"
-      className="bg-emerald-400 w-32 border-4"
+      className={ `${!isActive ? 'bg-blue-900' : 'bg-red-500'} w-32 rounded-lg` }
       onClick={ handleClick }
     >
       <img
         src={ !isActive ? block : blinkBlock }
         alt=""
-        className="w-3/2"
+        className="w-1/2"
       />
     </button>
   );
