@@ -1,4 +1,4 @@
-import { useRef, useContext } from 'react';
+import { useRef, useContext, useEffect } from 'react';
 import ThemeContext from '../context/ThemeContext';
 import blinkBlock from '../assets/blinkBlock.png';
 import block from '../assets/block.png';
@@ -6,6 +6,18 @@ import block from '../assets/block.png';
 function Toggle() {
   const { isActive, setIsActive } = useContext(ThemeContext);
   const toogle = useRef(null);
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('darkMode');
+    const clickTarget = toogle.current;
+    const parsedActive = JSON.parse(savedData);
+    if (savedData) {
+      setIsActive(parsedActive);
+      console.log(savedData);
+    } if (parsedActive === true) {
+      clickTarget.firstChild.className = 'translate-x-full w-1/2';
+    }
+  }, []);
 
   const handleClick = () => {
     const clickTarget = toogle.current;

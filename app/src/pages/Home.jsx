@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import ghost from '../assets/ghost.png';
 import boo from '../assets/openEyesBoo.png';
 import backMario from '../assets/backMario.png';
@@ -7,16 +7,7 @@ import ThemeContext from '../context/ThemeContext';
 import Header from '../components/Header';
 
 function Home() {
-  const { isActive, setIsActive } = useContext(ThemeContext);
-
-  useEffect(() => {
-    const savedData = localStorage.getItem('data');
-    if (savedData) {
-      const parsedActive = JSON.parse(savedData);
-      setIsActive(parsedActive);
-      console.log(savedData);
-    }
-  }, []);
+  const { isActive } = useContext(ThemeContext);
 
   return (
     <div>
