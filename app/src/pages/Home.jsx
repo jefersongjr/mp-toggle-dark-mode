@@ -24,8 +24,8 @@ function Home() {
         >
           {
             (!isActive
-              ? <img src={ ghost } alt="fantasma escondido" className="w-1/2" />
-              : <img src={ boo } alt="fantasma" className="w-1/2 md:justify-self-end" />)
+              ? <img src={ ghost } alt="fantasma escondido" className="w-64" />
+              : <img src={ boo } alt="fantasma" className="w-64 justify-self-end" />)
           }
           {
             (!isActive
